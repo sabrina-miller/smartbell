@@ -1,26 +1,31 @@
 import pandas as pd
 import csv
 import matplotlib.pyplot as plt
+import statistics
 
-squat = pd.read_csv("Emily_squat_11_4.csv")
+squat = pd.read_csv("data/Sabrina_DL_200.csv") # load in some csv data
 
-s = squat['x-axis (g)']
+s = squat['x-axis (g)'] # look only at x data
+s.plot() # plot original data
+plt.show()
+
+print(statistics.stdev(s)) # print std deviation    NOTE: Large standard deviation (0.36 instead of 0.1 or 0.05) indicates skewed data, downward trend
+
+s = s[s.diff() > 0.02]  # Ignore points where change is less than some amount from previous
+s = s.add(-s.mean())    # Shift data to center the mean at 0
+
+s = s.rolling(window=2).mean()  # Do rolling average to clean up data
+
+s = s*(1/s.max())   # Scale data 
+
 s.plot()
 plt.show()
 
-s = s[s.diff() > 0.04]
-s = s.add(-s.mean())
-
-s = s.rolling(window=2).mean()
-
-s.plot()
-plt.show()
-
-count = 0
+count = 0 # Count up number of peaks (> 0.5*max)
 prev = -999
 for i,v in s.iteritems():
     if v > 0.5*(s.max()):
-        if i - prev > 20:
+        if i - prev > 20:   # ignore if right next to another peak
             prev = i
             count+=1
     
