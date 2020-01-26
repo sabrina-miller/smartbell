@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import coremltools
+import os, sys
+import csv
 from scipy import stats
 from IPython.display import display, HTML
 
@@ -33,18 +35,23 @@ STEP_DISTANCE = 20
 
 
 def read_data(file_path):
-    df = pd.read_csv(file_path)
-    # ... and then this column must be transformed to float explicitly
-    df['x-axis (g)'] = df['x-axis (g)'].astype(float)
-    df['y-axis (g)'] = df['y-axis (g)'].astype(float)
-    df['z-axis (g)'] = df['z-axis (g)'].astype(float)
-    df.drop('epoc (ms)', axis=1, inplace=True)
-    df.drop('timestamp (-04:00)', axis=1, inplace=True)
-    df.drop('elapsed (s)', axis=1, inplace=True)
-    
-    show_basic_dataframe_info(df)
+    for index,row in enumerate(csv.reader(open('data/'+file_path, 'r'))):
+        if index != 0 or file_num == 1:
+            writer.writerow(row)
+        
 
-    return df
+    # df = pd.read_csv(file_path)
+    # # ... and then this column must be transformed to float explicitly
+    # df['x-axis (g)'] = df['x-axis (g)'].astype(float)
+    # df.drop('y-axis (g)', axis=1, inplace=True)
+    # df.drop('z-axis (g)', axis=1, inplace=True)
+    # df.drop('epoc (ms)', axis=1, inplace=True)
+    # # df.drop('timestamp (-04:00)', axis=1, inplace=True)
+    # df.drop('elapsed (s)', axis=1, inplace=True)
+    
+    # show_basic_dataframe_info(df)
+
+    return 6
 
  
 def show_basic_dataframe_info(dataframe):
@@ -53,5 +60,9 @@ def show_basic_dataframe_info(dataframe):
     print('Number of columns in the dataframe: %i' % (dataframe.shape[1]))
     print('Number of rows in the dataframe: %i\n' % (dataframe.shape[0]))
 
-# Load data set containing all the data from csv
-df = read_data('data/Sabrina_DL_200.csv')
+file_num = 1
+writer = csv.writer(open('all_data.csv', 'w'))
+for file in os.listdir("data/"):
+    read_data(file)
+    file_num +=1
+
