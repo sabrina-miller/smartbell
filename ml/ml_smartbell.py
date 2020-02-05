@@ -19,7 +19,6 @@ from keras.layers import Dense, Dropout, Flatten, Reshape
 from keras.layers import Conv2D, MaxPooling2D
 from keras.utils import np_utils
 
-
 # Set some standard parameters upfront
 pd.options.display.float_format = '{:.1f}'.format
 sns.set() # Default seaborn look and feel
@@ -36,18 +35,19 @@ STEP_DISTANCE = 20
 
 def read_data(file_path):
     for index,row in enumerate(csv.reader(open('data/'+file_path, 'r'))):
+        file_path = file_path.lower()
         if index != 0:
-            if "Sabrina" in file_path and "SQ" in file_path:
+            if "sabrina" in file_path and "sq" in file_path:
                 writer.writerow(row+[file_num]+["Sabrina"]+["squat"])
-            elif "Sabrina" in file_path and "DL" in file_path:
+            elif "sabrina" in file_path and "dl" in file_path:
                 writer.writerow(row+[file_num]+["Sabrina"]+["deadlift"])
-            elif "Emily" in file_path and "SQ" in file_path:
+            elif "emily" in file_path and "sq" in file_path:
                 writer.writerow(row+[file_num]+["Emily"]+["squat"])
-            elif "Emily" in file_path and "DL" in file_path:
+            elif "emily" in file_path and "dl" in file_path:
                 writer.writerow(row+[file_num]+["Emily"]+["deadlift"])
-            elif "Sophie" in file_path and "SQ" in file_path:
+            elif "sophie" in file_path and "sq" in file_path:
                 writer.writerow(row+[file_num]+["Sophie"]+["squat"])
-            elif "Sophie" in file_path and "DL" in file_path:
+            elif "sophie" in file_path and "dl" in file_path:
                 writer.writerow(row+[file_num]+["Sophie"]+["deadlift"])
         elif file_num == 1:
             writer.writerow(row+["file_num"]+["person"]+["activity"])
