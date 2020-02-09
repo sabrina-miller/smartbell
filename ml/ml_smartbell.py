@@ -41,6 +41,10 @@ def read_data(file_path):
                 writer.writerow(row+[file_num]+["Sabrina"]+["squat"])
             elif "sabrina" in file_path and "dl" in file_path:
                 writer.writerow(row+[file_num]+["Sabrina"]+["deadlift"])
+            elif "emilyc" in file_path and "sq" in file_path:
+                writer.writerow(row+[file_num]+["Emily C"]+["squat"])
+            elif "emilyc" in file_path and "dl" in file_path:
+                writer.writerow(row+[file_num]+["Emily C"]+["deadlift"])
             elif "emily" in file_path and "sq" in file_path:
                 writer.writerow(row+[file_num]+["Emily"]+["squat"])
             elif "emily" in file_path and "dl" in file_path:
@@ -49,6 +53,14 @@ def read_data(file_path):
                 writer.writerow(row+[file_num]+["Sophie"]+["squat"])
             elif "sophie" in file_path and "dl" in file_path:
                 writer.writerow(row+[file_num]+["Sophie"]+["deadlift"])
+            elif "katie" in file_path and "sq" in file_path:
+                writer.writerow(row+[file_num]+["Katie"]+["squat"])
+            elif "katie" in file_path and "dl" in file_path:
+                writer.writerow(row+[file_num]+["Katie"]+["deadlift"])
+            elif "david" in file_path and "sq" in file_path:
+                writer.writerow(row+[file_num]+["David"]+["squat"])
+            elif "david" in file_path and "dl" in file_path:
+                writer.writerow(row+[file_num]+["David"]+["deadlift"])
         elif file_num == 1:
             writer.writerow(row+["file_num"]+["person"]+["activity"])
 
@@ -59,8 +71,6 @@ def machine_learn():
     df['x-axis (g)'] = df['x-axis (g)'].astype(float)
     df['y-axis (g)'] = df['y-axis (g)'].astype(float)
     df['z-axis (g)'] = df['z-axis (g)'].astype(float)
-    #df.drop('y-axis (g)', axis=1, inplace=True)
-    #df.drop('z-axis (g)', axis=1, inplace=True)
     df.drop('epoc (ms)', axis=1, inplace=True)
     # df.drop('timestamp (-04:00)', axis=1, inplace=True)
     df.drop('elapsed (s)', axis=1, inplace=True)
@@ -81,8 +91,8 @@ def machine_learn():
     df[LABEL] = le.fit_transform(df['activity'].values.ravel())
 
     # Differentiate between test set and training set
-    df_test = df[df['file_num'] > 7]
-    df_train = df[df['file_num'] <= 7]
+    df_test = df[df['file_num'] <= 7]
+    df_train = df[df['file_num'] > 7]
     
     # Normalize features for training data set (values between 0 and 1)
     # Surpress warning for next 3 operation
@@ -97,7 +107,6 @@ def machine_learn():
     N_FEATURES = 3
     # Number of steps to advance in each iteration (for me, it should always
     # be equal to the TIME_PERIODS in order to have no overlap between segments)
-    # STEP_DISTANCE = TIME_PERIODS
     segments = []
     labels = []
     for i in range(0, len(df) - TIME_PERIODS, STEP_DISTANCE):
