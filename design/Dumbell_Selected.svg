@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="32px" viewBox="0 0 43 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 13</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Favorite" transform="translate(-99.000000, -521.000000)">
+            <g id="Group-13" transform="translate(100.000000, 522.000000)">
+                <g id="Group-11" stroke="#1A1616">
+                    <polygon id="Path-3" stroke-width="0.9" points="9.01870265 9 2.21266718 11.7390524 0 18.4101476 2.21266718 24.3831807 5.74071803 28.4853622 9.01870265 30 15.2022187 26.5117092 17.8329861 22.9488986 18 20.4472215 15.790117 14.3608142"></polygon>
+                    <line x1="17" y1="18" x2="28" y2="13" id="Path-4" stroke-width="1.5"></line>
+                    <line x1="16" y1="14" x2="26" y2="10" id="Path-5" stroke-width="0.9" fill="#000000"></line>
+                    <polyline id="Path-6" stroke-width="0.9" points="26.4100686 14.1273361 29.7059497 17.0362159 32.3512586 18 37.1512586 15.3671773 41 11.5705779 38.4704805 3.30010112 32.3512586 0 27.108238 2.10868507 24 6.88221415 24.7208238 10.6975769"></polyline>
+                    <polyline id="Path-7" stroke-width="0.9" points="8.79974756 30 11 26.270155 7.33228971 16.8727582 2 12"></polyline>
+                    <polyline id="Path-8" stroke-width="0.9" points="1 15 4.70437471 18.5344557 6.19263813 21.9145419 7 25.3930291 5.53555084 28"></polyline>
+                    <polyline id="Path-9" stroke-width="0.9" points="7 25.7704336 11.1667911 26 18 23"></polyline>
+                    <polyline id="Path-10" stroke-width="0.9" points="5 19 7.81087911 16.5207197 15 13"></polyline>
+                    <polyline id="Path-11" stroke-width="0.9" points="30.1747758 17 33 13.8777055 30.1747758 8.2212873 26 5"></polyline>
+                    <polyline id="Path-12" stroke-width="0.9" points="32.5289646 18 36 13.8899332 33.1147124 5.47260438 27 2"></polyline>
+                    <polyline id="Path-13" stroke-width="0.9" points="39 3 33.4556743 5.00165827 30 7"></polyline>
+                    <polyline id="Path-14" stroke-width="0.9" points="41 12 36.185789 14 33 13.8615092"></polyline>
+                    <path d="M26,10 C26.8035946,10.2787695 27.3306174,10.6059925 27.5810682,10.9816688 C27.8315191,11.357345 27.971163,12.0301221 28,13" id="Path-15" stroke-width="0.9"></path>
+                </g>
+                <polygon id="Path-17" fill-opacity="0.7" fill="#000000" points="9 9 2.4281024 12 0 18.4101476 2 24.5 5.74071803 28.4853622 9 30 15.2022187 26.5117092 18 23 18 19.9845672 17 18 26.4492966 14 29.5 17 32.5 18 37 15.5 41 11.5 38.4704805 3.30010112 32.5 0 27 2 24 6.88221415 24.7208238 10.6975769 16 14"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
