@@ -6,7 +6,7 @@ from scipy.signal import find_peaks, peak_prominences
 from scipy.signal import detrend
 import numpy as np
 
-squat = pd.read_csv("data/Emily_DL_135_5reps.csv") # load in some csv data
+squat = pd.read_csv("data/Sophie_DL_90.csv") # load in some csv data
 
 x = squat['x-axis (g)'].astype(float)
 y = squat['y-axis (g)'].astype(float)
@@ -31,7 +31,6 @@ s = detrend(s) # remove trend lines
 s = s*(1/s.max())   # Scale data
 
 peaks = find_peaks(s, distance=11)[0]   # Try distances: 10, 20
-print(len(peak1))
 
 prominences = peak_prominences(s, peaks)[0]
 heights = s[peaks] - prominences

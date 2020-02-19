@@ -3,29 +3,19 @@ from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import coremltools
-import os, sys
+import os
 import csv
 from scipy import stats
-from IPython.display import display, HTML
 
-from sklearn import metrics
 from sklearn.metrics import classification_report
 from sklearn import preprocessing
 
 import keras
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten, Reshape
-from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Dense, Flatten, Reshape
 from keras.utils import np_utils
 
-# Set some standard parameters upfront
-pd.options.display.float_format = '{:.1f}'.format
-sns.set() # Default seaborn look and feel
-plt.style.use('ggplot')
-# Same labels will be reused throughout the program
-LABELS = ['Deadlift',
-          'Squat']
+sns.set() # Graph aesthetics
 # The number of steps within one time segment
 TIME_PERIODS = 40
 # The steps to take from one segment to the next; if this value is equal to
@@ -72,23 +62,16 @@ def machine_learn():
     df['y-axis (g)'] = df['y-axis (g)'].astype(float)
     df['z-axis (g)'] = df['z-axis (g)'].astype(float)
     df.drop('epoc (ms)', axis=1, inplace=True)
-    # df.drop('timestamp (-04:00)', axis=1, inplace=True)
     df.drop('elapsed (s)', axis=1, inplace=True)
     
-    show_basic_dataframe_info(df)
-    
+    # Data analysis (can delete later)
     df['activity'].value_counts().plot(kind='bar', title='Training Examples by Activity Type')
     #plt.show()
-    # Better understand how the recordings are spread across the different
-    # users who participated in the study
     df['person'].value_counts().plot(kind='bar', title='Training Examples by User')
     #plt.show()
 
-    LABEL = 'ActivityEncoded'
-    # Transform the labels from String to Integer via LabelEncoder
-    le = preprocessing.LabelEncoder()
-    # Add a new column to the existing DataFrame with the encoded values
-    df[LABEL] = le.fit_transform(df['activity'].values.ravel())
+    le = preprocessing.LabelEncoder() # Convert labels from string to integer
+    df['ActivityEncoded'] = le.fit_transform(df['activity'].values.ravel()) # add encoded values to dataframe
 
     # Differentiate between test set and training set
     df_test = df[df['file_num'] <= 7]
@@ -105,8 +88,7 @@ def machine_learn():
     
     # x, y, z acceleration as features
     N_FEATURES = 3
-    # Number of steps to advance in each iteration (for me, it should always
-    # be equal to the TIME_PERIODS in order to have no overlap between segments)
+    # Number of steps to advance in each iteration
     segments = []
     labels = []
     for i in range(0, len(df) - TIME_PERIODS, STEP_DISTANCE):
@@ -143,9 +125,6 @@ def machine_learn():
     print('New y_train shape: ', y_train_hot.shape)
     
     model_m = Sequential()
-    # Remark: since coreml cannot accept vector shapes of complex shape like
-    # [80,3] this workaround is used in order to reshape the vector internally
-    # prior feeding it into the network
     model_m.add(Reshape((TIME_PERIODS, 3), input_shape=(input_shape,)))
     model_m.add(Dense(100, activation='relu'))
     model_m.add(Dense(100, activation='relu'))
@@ -164,7 +143,7 @@ def machine_learn():
 
     # Hyper-parameters
     BATCH_SIZE = 200
-    EPOCHS = 50
+    EPOCHS = 10
 
     # Enable validation to use ModelCheckpoint and EarlyStopping callbacks.
     history = model_m.fit(x_train,
@@ -193,14 +172,10 @@ def machine_learn():
     max_y_pred_train = np.argmax(y_pred_train, axis=1)
     print(classification_report(y_train, max_y_pred_train))
     
-    
-    
-def show_basic_dataframe_info(dataframe):
-
-    # Shape and how many rows and columns
-    print('Number of columns in the dataframe: %i' % (dataframe.shape[1]))
-    print('Number of rows in the dataframe: %i\n' % (dataframe.shape[0]))
-
+    model_m.save('my_model.h5')
+    keras_output_node_name = model_m.outputs[0].name.split(':')[0]
+    graph_output_node_name = keras_output_node_name.split('/')[-1]
+    print(graph_output_node_name)
 
 file_num = 1
 writer = csv.writer(open('all_data.csv', 'w'))
