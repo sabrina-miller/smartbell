@@ -10,10 +10,13 @@ from scipy import stats
 from sklearn.metrics import classification_report
 from sklearn import preprocessing
 
+import tensorflow as tf
+
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Reshape
 from keras.utils import np_utils
+from keras import backend as K
 
 sns.set() # Graph aesthetics
 # The number of steps within one time segment
@@ -23,44 +26,68 @@ TIME_PERIODS = 40
 STEP_DISTANCE = 20
 
 
+def freeze_session(session, keep_var_names=None, output_names=None, clear_devices=True):
+    """
+    """
+    from tensorflow.python.framework.graph_util import convert_variables_to_constants
+    graph = session.graph
+    with graph.as_default():
+        freeze_var_names = list(set(v.op.name for v in tf.global_variables()).difference(keep_var_names or []))
+        output_names = output_names or []
+        output_names += [v.op.name for v in tf.global_variables()]
+        input_graph_def = graph.as_graph_def()
+        if clear_devices:
+            for node in input_graph_def.node:
+                node.device = ""
+        frozen_graph = convert_variables_to_constants(session, input_graph_def,
+                                                      output_names, freeze_var_names)
+        return frozen_graph
+
+
+
 def read_data(file_path):
     for index,row in enumerate(csv.reader(open('data/'+file_path, 'r'))):
         file_path = file_path.lower()
-        if index != 0:
-            if "sabrina" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["Sabrina"]+["squat"])
-            elif "sabrina" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["Sabrina"]+["deadlift"])
-            elif "emilyc" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["Emily C"]+["squat"])
-            elif "emilyc" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["Emily C"]+["deadlift"])
-            elif "emily" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["Emily"]+["squat"])
-            elif "emily" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["Emily"]+["deadlift"])
-            elif "sophie" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["Sophie"]+["squat"])
-            elif "sophie" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["Sophie"]+["deadlift"])
-            elif "katie" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["Katie"]+["squat"])
-            elif "katie" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["Katie"]+["deadlift"])
-            elif "david" in file_path and "sq" in file_path:
-                writer.writerow(row+[file_num]+["David"]+["squat"])
-            elif "david" in file_path and "dl" in file_path:
-                writer.writerow(row+[file_num]+["David"]+["deadlift"])
-        elif file_num == 1:
-            writer.writerow(row+["file_num"]+["person"]+["activity"])
+        try:
+            if (abs(prev - float(row[3])) > 0.005):
+                if index != 0:
+                    if "sabrina" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["Sabrina"]+["squat"])
+                    elif "sabrina" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["Sabrina"]+["deadlift"])
+                    elif "emilyc" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["Emily C"]+["squat"])
+                    elif "emilyc" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["Emily C"]+["deadlift"])
+                    elif "emily" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["Emily"]+["squat"])
+                    elif "emily" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["Emily"]+["deadlift"])
+                    elif "sophie" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["Sophie"]+["squat"])
+                    elif "sophie" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["Sophie"]+["deadlift"])
+                    elif "katie" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["Katie"]+["squat"])
+                    elif "katie" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["Katie"]+["deadlift"])
+                    elif "david" in file_path and "sq" in file_path:
+                        writer.writerow(row+[file_num]+["David"]+["squat"])
+                    elif "david" in file_path and "dl" in file_path:
+                        writer.writerow(row+[file_num]+["David"]+["deadlift"])
+            prev = float(row[3])
+        except:
+            if index ==0 and file_num == 1:
+                writer.writerow(row+["file_num"]+["person"]+["activity"])
+            prev = 0
 
     
 def machine_learn():
 
     df = pd.read_csv('all_data.csv')
-    df['x-axis (g)'] = df['x-axis (g)'].astype(float)
-    df['y-axis (g)'] = df['y-axis (g)'].astype(float)
-    df['z-axis (g)'] = df['z-axis (g)'].astype(float)
+    x = df['x-axis (g)'].astype(float)
+    y = df['y-axis (g)'].astype(float)
+    z = df['z-axis (g)'].astype(float)
     df.drop('epoc (ms)', axis=1, inplace=True)
     df.drop('elapsed (s)', axis=1, inplace=True)
     
@@ -92,9 +119,9 @@ def machine_learn():
     segments = []
     labels = []
     for i in range(0, len(df) - TIME_PERIODS, STEP_DISTANCE):
-        xs = df['x-axis (g)'].values[i: i + TIME_PERIODS]
-        ys = df['y-axis (g)'].values[i: i + TIME_PERIODS]
-        zs = df['z-axis (g)'].values[i: i + TIME_PERIODS]
+        xs = x.values[i: i + TIME_PERIODS]
+        ys = y.values[i: i + TIME_PERIODS]
+        zs = z.values[i: i + TIME_PERIODS]
         # Retrieve the most often used label in this segment
         label = stats.mode(df['ActivityEncoded'][i: i + TIME_PERIODS])[0][0]
         segments.append([xs, ys, zs])
@@ -173,18 +200,15 @@ def machine_learn():
     print(classification_report(y_train, max_y_pred_train))
     
     model_m.save('my_model.h5')
-    keras_output_node_name = model_m.outputs[0].name.split(':')[0]
-    graph_output_node_name = keras_output_node_name.split('/')[-1]
-    print(graph_output_node_name)
-
+    
 file_num = 1
 writer = csv.writer(open('all_data.csv', 'w'))
 for file in os.listdir("data/"):
+    prev = 0
     read_data(file)
     file_num +=1
 
 machine_learn()
-
 
 
 
