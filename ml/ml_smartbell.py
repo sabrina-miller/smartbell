@@ -16,34 +16,21 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Reshape
 from keras.utils import np_utils
-from keras import backend as K
 
 sns.set() # Graph aesthetics
 # The number of steps within one time segment
-TIME_PERIODS = 40
+TIME_PERIODS = 10
 # The steps to take from one segment to the next; if this value is equal to
 # TIME_PERIODS, then there is no overlap between the segments
-STEP_DISTANCE = 20
+STEP_DISTANCE =8
 
-
-def freeze_session(session, keep_var_names=None, output_names=None, clear_devices=True):
-    """
-    """
-    from tensorflow.python.framework.graph_util import convert_variables_to_constants
-    graph = session.graph
-    with graph.as_default():
-        freeze_var_names = list(set(v.op.name for v in tf.global_variables()).difference(keep_var_names or []))
-        output_names = output_names or []
-        output_names += [v.op.name for v in tf.global_variables()]
-        input_graph_def = graph.as_graph_def()
-        if clear_devices:
-            for node in input_graph_def.node:
-                node.device = ""
-        frozen_graph = convert_variables_to_constants(session, input_graph_def,
-                                                      output_names, freeze_var_names)
-        return frozen_graph
-
-
+# 10, 5: 94% but weird
+# 10, 8: 93%
+# 10, 10: 92%
+# 20, 10: 93% 
+# 20, 20: 92%
+# 40, 40: 90% 
+# 40, 20: 93% NOOOOOOOOO
 
 def read_data(file_path):
     for index,row in enumerate(csv.reader(open('data/'+file_path, 'r'))):
@@ -85,9 +72,9 @@ def read_data(file_path):
 def machine_learn():
 
     df = pd.read_csv('all_data.csv')
-    x = df['x-axis (g)'].astype(float)
-    y = df['y-axis (g)'].astype(float)
-    z = df['z-axis (g)'].astype(float)
+    df['x-axis (g)'] = df['x-axis (g)'].astype(float)
+    df['y-axis (g)'] = df['y-axis (g)'].astype(float)
+    df['z-axis (g)'] = df['z-axis (g)'].astype(float)
     df.drop('epoc (ms)', axis=1, inplace=True)
     df.drop('elapsed (s)', axis=1, inplace=True)
     
@@ -104,26 +91,17 @@ def machine_learn():
     df_test = df[df['file_num'] <= 7]
     df_train = df[df['file_num'] > 7]
     
-    # Normalize features for training data set (values between 0 and 1)
-    # Surpress warning for next 3 operation
-    pd.options.mode.chained_assignment = None  # default='warn'
-    df_train['x-axis (g)'] = df_train['x-axis (g)'] / df_train['x-axis (g)'].max()
-    df_train['y-axis (g)'] = df_train['y-axis (g)'] / df_train['y-axis (g)'].max()
-    df_train['z-axis (g)'] = df_train['z-axis (g)'] / df_train['z-axis (g)'].max()
-    # Round numbers
-    df_train = df_train.round({'x-axis (g)': 4, 'y-axis (g)': 4, 'z-axis (g)': 4})
-    
     # x, y, z acceleration as features
     N_FEATURES = 3
     # Number of steps to advance in each iteration
     segments = []
     labels = []
-    for i in range(0, len(df) - TIME_PERIODS, STEP_DISTANCE):
-        xs = x.values[i: i + TIME_PERIODS]
-        ys = y.values[i: i + TIME_PERIODS]
-        zs = z.values[i: i + TIME_PERIODS]
+    for i in range(0, len(df_train) - TIME_PERIODS, STEP_DISTANCE):
+        xs = df_train['x-axis (g)'].values[i: i + TIME_PERIODS]
+        ys = df_train['y-axis (g)'].values[i: i + TIME_PERIODS]
+        zs = df_train['z-axis (g)'].values[i: i + TIME_PERIODS]
         # Retrieve the most often used label in this segment
-        label = stats.mode(df['ActivityEncoded'][i: i + TIME_PERIODS])[0][0]
+        label = stats.mode(df_train['ActivityEncoded'][i: i + TIME_PERIODS])[0][0]
         segments.append([xs, ys, zs])
         labels.append(label)
 
@@ -137,9 +115,7 @@ def machine_learn():
     
     # Set input & output dimensions
     num_time_periods, num_sensors = x_train.shape[1], x_train.shape[2]
-    num_classes = le.classes_.size
-    print(list(le.classes_))
-    
+    num_classes = le.classes_.size # num_classes = 2
     input_shape = (num_time_periods*num_sensors)
     x_train = x_train.reshape(x_train.shape[0], input_shape)
     print('x_train shape:', x_train.shape)
@@ -169,8 +145,8 @@ def machine_learn():
     model_m.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     # Hyper-parameters
-    BATCH_SIZE = 200
-    EPOCHS = 10
+    BATCH_SIZE = 200 # 200
+    EPOCHS = 50
 
     # Enable validation to use ModelCheckpoint and EarlyStopping callbacks.
     history = model_m.fit(x_train,
@@ -201,6 +177,14 @@ def machine_learn():
     
     model_m.save('my_model.h5')
     
+    # 0 = deadlift, 1 = squat
+    #print(x_train[500])
+    #print(y_train[500])
+    #print('\nPrediction from Keras:')
+    #test_record = x_train[500].reshape(1,input_shape)
+    #keras_prediction = np.argmax(model_m.predict(test_record), axis=1)
+    #print(le.inverse_transform(keras_prediction)[0])
+    
 file_num = 1
 writer = csv.writer(open('all_data.csv', 'w'))
 for file in os.listdir("data/"):
@@ -209,6 +193,5 @@ for file in os.listdir("data/"):
     file_num +=1
 
 machine_learn()
-
 
 
