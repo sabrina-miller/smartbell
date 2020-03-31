@@ -1,9 +1,11 @@
 import coremltools
 import tfcoreml
+import tensorflow as tf
 
-#input_name = keras_model.inputs[0].name.split(':')[0]
-#keras_output_node_name = keras_model.outputs[0].name.split(':')[0]
-#graph_output_node_name = keras_output_node_name.split('/')[-1]
 
-model = tfcoreml.convert('my_model.h5', output_feature_names=['dense_4/Softmax:0'])
-model.save('final_coreml_model.mlmodel')
+tfcoreml.convert(tf_model_path='my_model.pb', 
+            mlmodel_path="it_worked.mlmodel", 
+            #input_name_shape_dict={"reshape_1_input:0": [None, 120]},
+            output_feature_names=['dense_4/Softmax:0'])
+
+

@@ -19,10 +19,10 @@ from keras.utils import np_utils
 
 sns.set() # Graph aesthetics
 # The number of steps within one time segment
-TIME_PERIODS = 10
+TIME_PERIODS = 15
 # The steps to take from one segment to the next; if this value is equal to
 # TIME_PERIODS, then there is no overlap between the segments
-STEP_DISTANCE =8
+STEP_DISTANCE = 8
 
 # 10, 5: 94% but weird
 # 10, 8: 93%
@@ -88,8 +88,8 @@ def machine_learn():
     df['ActivityEncoded'] = le.fit_transform(df['activity'].values.ravel()) # add encoded values to dataframe
 
     # Differentiate between test set and training set
-    df_test = df[df['file_num'] <= 7]
-    df_train = df[df['file_num'] > 7]
+    df_test = df[df['file_num'] <= 12]
+    df_train = df[df['file_num'] > 12]
     
     # x, y, z acceleration as features
     N_FEATURES = 3
@@ -178,12 +178,18 @@ def machine_learn():
     model_m.save('my_model.h5')
     
     # 0 = deadlift, 1 = squat
-    #print(x_train[500])
-    #print(y_train[500])
+   # print(x_train[800]) # pick any number to try 
+    #print(y_train[800])
     #print('\nPrediction from Keras:')
-    #test_record = x_train[500].reshape(1,input_shape)
+    #test_record = x_train[800].reshape(1,input_shape)
     #keras_prediction = np.argmax(model_m.predict(test_record), axis=1)
     #print(le.inverse_transform(keras_prediction)[0])
+    
+    #print('\nPrediction from Coreml:')
+    #coreml_prediction = coreml_model.predict({'accelData': test_record.reshape(input_shape)})
+    #print(coreml_prediction["classLabel"])
+    
+    
     
 file_num = 1
 writer = csv.writer(open('all_data.csv', 'w'))
