@@ -66,6 +66,14 @@ from keras.engine import InputLayer
 #
 #
 #coreml_model.save('Output.mlmodel')
+
 import coremltools
-mlmodel = coremltools.converters.keras.convert('my_model.h5')
+output_labels = ['Squat', 'Deadlift']
+mlmodel = coremltools.converters.keras.convert('my_model.h5', input_names=['accel'], output_names=['output'], class_labels=output_labels)
+
+mlmodel.author = 'Sophie Saunders and Emily Moise'
+mlmodel.short_description = 'Squat/Deadlift recognition'
+mlmodel.input_description['accel'] = 'Takes x, y, z acceleration data as input'
+mlmodel.output_description['output'] = 'Prediction of Exercise'
+
 mlmodel.save('coreml_model.mlmodel')
