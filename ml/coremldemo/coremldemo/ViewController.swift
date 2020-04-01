@@ -22,12 +22,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func predictMovement(_ accel:[NSNumber]) -> String? {
+    func predictMovement(_ accel:[Double]) -> String? {
         let model = coreml_model()
-        guard let input2 = try? MLMultiArray(shape:[45], dataType:.double) else {
+        
+        /*let data = _currentScaledMotionArrays.reduce([], +) //result is of type [Double] with 480 elements*/
+        guard let mlMultiArray = try? MLMultiArray(shape:[45], dataType:MLMultiArrayDataType.double) else {
             fatalError("Unexpected runtime error. MLMultiArray")
         }
-        if let prediction = try? model.prediction(input: input2) {
+        for (index, element) in datastring.enumerated() {
+            mlMultiArray[index] = NSNumber(floatLiteral: element)
+        }
+        let input = coreml_modelInput(accel: mlMultiArray)
+        /*guard let predictionOutput = try? _predictionModel.prediction(input: input) else {
+                fatalError("Unexpected runtime error. model.prediction")
+        }*/
+        
+        
+        
+        // Use the generated input API to create the network's input, with no state
+       // let modelInput = coreml_modelInput(accel: input2 ?? )
+        
+        if let prediction = try? model.prediction(input: input) {
             if prediction.classLabel == "Squat" {
                 return "Squat"
             }
@@ -38,7 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return nil
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        predictionlabel.text = predictMovement([NSNumber(pointer: datastring)])
+        predictionlabel.text = predictMovement(datastring)
         
         return true
     }
