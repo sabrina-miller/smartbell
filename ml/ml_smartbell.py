@@ -24,13 +24,13 @@ TIME_PERIODS = 15
 # TIME_PERIODS, then there is no overlap between the segments
 STEP_DISTANCE = 8
 
-# 10, 5: 94% but weird
+# 10, 5: 94% but skewed weirdly
 # 10, 8: 93%
 # 10, 10: 92%
 # 20, 10: 93% 
 # 20, 20: 92%
 # 40, 40: 90% 
-# 40, 20: 93% NOOOOOOOOO
+# 40, 20: 93% Weirdly skewed also
 
 def read_data(file_path):
     for index,row in enumerate(csv.reader(open('data/'+file_path, 'r'))):
@@ -178,7 +178,7 @@ def machine_learn():
     model_m.save('my_model.h5')
     
     # 0 = deadlift, 1 = squat
-   # print(x_train[800]) # pick any number to try 
+    # print(x_train[800]) # pick any number to try 
     #print(y_train[800])
     #print('\nPrediction from Keras:')
     #test_record = x_train[800].reshape(1,input_shape)
