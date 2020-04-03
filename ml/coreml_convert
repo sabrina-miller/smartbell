@@ -1,25 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb 19 21:58:05 2020
+coreml_convert
+2/19/2020
 
 @author: emilym22
+
+This file takes in a Keras ML model (my_model.h5) and converts it to a .mlmodel file type,
+so that it can be used in Xcode in an iOS application. 
+
+Run this file from the command line using:
+python coreml_convert
 """
 
+# import statements
 from keras.models import load_model
 from keras.layers import Input, Dense
 from tensorflow import Tensor
 from keras import backend as K
 from keras.engine import InputLayer
-#
-
 import coremltools
-output_labels = ['Squat', 'Deadlift']
+
+output_labels = ['Squat', 'Deadlift'] # possible output values
+
+# convert .h5 keras model into Xcode model type .mlmodel
 mlmodel = coremltools.converters.keras.convert('my_model.h5', input_names=['accel'], output_names=['output'], class_labels=output_labels)
 
+# give model information
 mlmodel.author = 'Sophie Saunders and Emily Moise'
 mlmodel.short_description = 'Squat/Deadlift recognition'
 mlmodel.input_description['accel'] = 'Takes x, y, z acceleration data as input'
 mlmodel.output_description['output'] = 'Prediction of Exercise'
 
+# save model 
 mlmodel.save('coreml_model.mlmodel')
