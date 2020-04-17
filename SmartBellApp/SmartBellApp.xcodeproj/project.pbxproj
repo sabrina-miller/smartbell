@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A6AFCCF24134631006764E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AFCCE24134631006764E6 /* LoginView.swift */; };
+		0AA4635C240DC1AD00652ED5 /* DispatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4635B240DC1AD00652ED5 /* DispatchView.swift */; };
+		0ACDE3582401E43E0000CF60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDE3572401E43E0000CF60 /* AppDelegate.swift */; };
+		0ACDE35A2401E43E0000CF60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDE3592401E43E0000CF60 /* SceneDelegate.swift */; };
+		0ACDE35C2401E43E0000CF60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDE35B2401E43E0000CF60 /* ContentView.swift */; };
+		0ACDE35E2401E4400000CF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDE35D2401E4400000CF60 /* Assets.xcassets */; };
+		0ACDE3612401E4400000CF60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDE3602401E4400000CF60 /* Preview Assets.xcassets */; };
+		0ACDE3642401E4400000CF60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDE3622401E4400000CF60 /* LaunchScreen.storyboard */; };
+		0ACDE36F2401E4410000CF60 /* SmartBellAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDE36E2401E4410000CF60 /* SmartBellAppTests.swift */; };
+		0ACDE37A2401E4410000CF60 /* SmartBellAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDE3792401E4410000CF60 /* SmartBellAppUITests.swift */; };
+		0AE21E3C244896DA009CA983 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21E3B244896DA009CA983 /* HomeView.swift */; };
+		0AE21E3E2448B0AC009CA983 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21E3D2448B0AC009CA983 /* WorkoutView.swift */; };
+		0AE21E402448BB7F009CA983 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21E3F2448BB7F009CA983 /* ConnectionView.swift */; };
+		4A409F4E8CB30726CE7796CE /* Pods_SmartBellApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEBCBC32457130065888B9E /* Pods_SmartBellApp.framework */; };
+		6D098C82B827192BDB1ABD6F /* Pods_SmartBellAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A4D8F59FF6811E243D27C5 /* Pods_SmartBellAppTests.framework */; };
+		B559CCD6BAFF9DD04D393AEE /* Pods_SmartBellApp_SmartBellAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB05E58F57DE040FD0E126D /* Pods_SmartBellApp_SmartBellAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ACDE36B2401E4410000CF60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ACDE34C2401E43E0000CF60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ACDE3532401E43E0000CF60;
+			remoteInfo = SmartBellApp;
+		};
+		0ACDE3762401E4410000CF60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ACDE34C2401E43E0000CF60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ACDE3532401E43E0000CF60;
+			remoteInfo = SmartBellApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A6AFCCE24134631006764E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0AA4635B240DC1AD00652ED5 /* DispatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchView.swift; sourceTree = SOURCE_ROOT; };
+		0ACDE3542401E43E0000CF60 /* SmartBellApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBellApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACDE3572401E43E0000CF60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0ACDE3592401E43E0000CF60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0ACDE35B2401E43E0000CF60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0ACDE35D2401E4400000CF60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ACDE3602401E4400000CF60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0ACDE3632401E4400000CF60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0ACDE3652401E4400000CF60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ACDE36A2401E4410000CF60 /* SmartBellAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartBellAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACDE36E2401E4410000CF60 /* SmartBellAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBellAppTests.swift; sourceTree = "<group>"; };
+		0ACDE3702401E4410000CF60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ACDE3752401E4410000CF60 /* SmartBellAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartBellAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACDE3792401E4410000CF60 /* SmartBellAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBellAppUITests.swift; sourceTree = "<group>"; };
+		0ACDE37B2401E4410000CF60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AE21E3B244896DA009CA983 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0AE21E3D2448B0AC009CA983 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		0AE21E3F2448BB7F009CA983 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		2EEBCBC32457130065888B9E /* Pods_SmartBellApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartBellApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD34F765490D3ECA537630A /* Pods-SmartBellAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartBellAppTests/Pods-SmartBellAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BE7A7D222CC5B6AFF3E8D1D /* Pods-SmartBellAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellAppTests.release.xcconfig"; path = "Target Support Files/Pods-SmartBellAppTests/Pods-SmartBellAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		707E04AA8A72675CAC6C83A1 /* Pods-SmartBellApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellApp.release.xcconfig"; path = "Target Support Files/Pods-SmartBellApp/Pods-SmartBellApp.release.xcconfig"; sourceTree = "<group>"; };
+		7EB05E58F57DE040FD0E126D /* Pods_SmartBellApp_SmartBellAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartBellApp_SmartBellAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857E6E36B0F9FDC39E47D451 /* Pods-SmartBellApp-SmartBellAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellApp-SmartBellAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SmartBellApp-SmartBellAppUITests/Pods-SmartBellApp-SmartBellAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91A4D8F59FF6811E243D27C5 /* Pods_SmartBellAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartBellAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B130E2C23F38481335886F8A /* Pods-SmartBellApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellApp.debug.xcconfig"; path = "Target Support Files/Pods-SmartBellApp/Pods-SmartBellApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EB58E6A2715EC653DA6F6909 /* Pods-SmartBellApp-SmartBellAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartBellApp-SmartBellAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartBellApp-SmartBellAppUITests/Pods-SmartBellApp-SmartBellAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ACDE3512401E43E0000CF60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A409F4E8CB30726CE7796CE /* Pods_SmartBellApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3672401E4410000CF60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D098C82B827192BDB1ABD6F /* Pods_SmartBellAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3722401E4410000CF60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B559CCD6BAFF9DD04D393AEE /* Pods_SmartBellApp_SmartBellAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A6AFCCD2413460E006764E6 /* loginview */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AFCCE24134631006764E6 /* LoginView.swift */,
+			);
+			path = loginview;
+			sourceTree = "<group>";
+		};
+		0AA46358240DC15300652ED5 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				0AA4635B240DC1AD00652ED5 /* DispatchView.swift */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		0ACDE34B2401E43E0000CF60 = {
+			isa = PBXGroup;
+			children = (
+				0ACDE3562401E43E0000CF60 /* SmartBellApp */,
+				0ACDE36D2401E4410000CF60 /* SmartBellAppTests */,
+				0ACDE3782401E4410000CF60 /* SmartBellAppUITests */,
+				0ACDE3552401E43E0000CF60 /* Products */,
+				2C0CD8D8B48324BD3581DB8C /* Pods */,
+				51275A3CA2E7138FD410017A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0ACDE3552401E43E0000CF60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDE3542401E43E0000CF60 /* SmartBellApp.app */,
+				0ACDE36A2401E4410000CF60 /* SmartBellAppTests.xctest */,
+				0ACDE3752401E4410000CF60 /* SmartBellAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ACDE3562401E43E0000CF60 /* SmartBellApp */ = {
+			isa = PBXGroup;
+			children = (
+				0AE21E38244896AB009CA983 /* settings */,
+				0AE21E3624489698009CA983 /* logs */,
+				0AE21E3524489692009CA983 /* workout */,
+				0AE21E3424489684009CA983 /* home */,
+				0A6AFCCD2413460E006764E6 /* loginview */,
+				0AA46358240DC15300652ED5 /* misc */,
+				0ACDE3572401E43E0000CF60 /* AppDelegate.swift */,
+				0ACDE3592401E43E0000CF60 /* SceneDelegate.swift */,
+				0ACDE35B2401E43E0000CF60 /* ContentView.swift */,
+				0ACDE35D2401E4400000CF60 /* Assets.xcassets */,
+				0ACDE3622401E4400000CF60 /* LaunchScreen.storyboard */,
+				0ACDE3652401E4400000CF60 /* Info.plist */,
+				0ACDE35F2401E4400000CF60 /* Preview Content */,
+			);
+			path = SmartBellApp;
+			sourceTree = "<group>";
+		};
+		0ACDE35F2401E4400000CF60 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDE3602401E4400000CF60 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0ACDE36D2401E4410000CF60 /* SmartBellAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDE36E2401E4410000CF60 /* SmartBellAppTests.swift */,
+				0ACDE3702401E4410000CF60 /* Info.plist */,
+			);
+			path = SmartBellAppTests;
+			sourceTree = "<group>";
+		};
+		0ACDE3782401E4410000CF60 /* SmartBellAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDE3792401E4410000CF60 /* SmartBellAppUITests.swift */,
+				0ACDE37B2401E4410000CF60 /* Info.plist */,
+			);
+			path = SmartBellAppUITests;
+			sourceTree = "<group>";
+		};
+		0AE21E3424489684009CA983 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				0AE21E3B244896DA009CA983 /* HomeView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		0AE21E3524489692009CA983 /* workout */ = {
+			isa = PBXGroup;
+			children = (
+				0AE21E3D2448B0AC009CA983 /* WorkoutView.swift */,
+				0AE21E3F2448BB7F009CA983 /* ConnectionView.swift */,
+			);
+			path = workout;
+			sourceTree = "<group>";
+		};
+		0AE21E3624489698009CA983 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		0AE21E38244896AB009CA983 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		2C0CD8D8B48324BD3581DB8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B130E2C23F38481335886F8A /* Pods-SmartBellApp.debug.xcconfig */,
+				707E04AA8A72675CAC6C83A1 /* Pods-SmartBellApp.release.xcconfig */,
+				857E6E36B0F9FDC39E47D451 /* Pods-SmartBellApp-SmartBellAppUITests.debug.xcconfig */,
+				EB58E6A2715EC653DA6F6909 /* Pods-SmartBellApp-SmartBellAppUITests.release.xcconfig */,
+				3CD34F765490D3ECA537630A /* Pods-SmartBellAppTests.debug.xcconfig */,
+				5BE7A7D222CC5B6AFF3E8D1D /* Pods-SmartBellAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		51275A3CA2E7138FD410017A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EEBCBC32457130065888B9E /* Pods_SmartBellApp.framework */,
+				7EB05E58F57DE040FD0E126D /* Pods_SmartBellApp_SmartBellAppUITests.framework */,
+				91A4D8F59FF6811E243D27C5 /* Pods_SmartBellAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ACDE3532401E43E0000CF60 /* SmartBellApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACDE37E2401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellApp" */;
+			buildPhases = (
+				A56EBADC0D415E266C301CF9 /* [CP] Check Pods Manifest.lock */,
+				0ACDE3502401E43E0000CF60 /* Sources */,
+				0ACDE3512401E43E0000CF60 /* Frameworks */,
+				0ACDE3522401E43E0000CF60 /* Resources */,
+				9C35017F5ED872434C909FF3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartBellApp;
+			productName = SmartBellApp;
+			productReference = 0ACDE3542401E43E0000CF60 /* SmartBellApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0ACDE3692401E4410000CF60 /* SmartBellAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACDE3812401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellAppTests" */;
+			buildPhases = (
+				B8FA620CA0DA405E88528C5E /* [CP] Check Pods Manifest.lock */,
+				0ACDE3662401E4410000CF60 /* Sources */,
+				0ACDE3672401E4410000CF60 /* Frameworks */,
+				0ACDE3682401E4410000CF60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ACDE36C2401E4410000CF60 /* PBXTargetDependency */,
+			);
+			name = SmartBellAppTests;
+			productName = SmartBellAppTests;
+			productReference = 0ACDE36A2401E4410000CF60 /* SmartBellAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0ACDE3742401E4410000CF60 /* SmartBellAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACDE3842401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellAppUITests" */;
+			buildPhases = (
+				653771988796B81192FE939A /* [CP] Check Pods Manifest.lock */,
+				0ACDE3712401E4410000CF60 /* Sources */,
+				0ACDE3722401E4410000CF60 /* Frameworks */,
+				0ACDE3732401E4410000CF60 /* Resources */,
+				136331BA0FF704B5BFCAC079 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ACDE3772401E4410000CF60 /* PBXTargetDependency */,
+			);
+			name = SmartBellAppUITests;
+			productName = SmartBellAppUITests;
+			productReference = 0ACDE3752401E4410000CF60 /* SmartBellAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ACDE34C2401E43E0000CF60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = SmartBell;
+				TargetAttributes = {
+					0ACDE3532401E43E0000CF60 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					0ACDE3692401E4410000CF60 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 0ACDE3532401E43E0000CF60;
+					};
+					0ACDE3742401E4410000CF60 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 0ACDE3532401E43E0000CF60;
+					};
+				};
+			};
+			buildConfigurationList = 0ACDE34F2401E43E0000CF60 /* Build configuration list for PBXProject "SmartBellApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0ACDE34B2401E43E0000CF60;
+			productRefGroup = 0ACDE3552401E43E0000CF60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ACDE3532401E43E0000CF60 /* SmartBellApp */,
+				0ACDE3692401E4410000CF60 /* SmartBellAppTests */,
+				0ACDE3742401E4410000CF60 /* SmartBellAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ACDE3522401E43E0000CF60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACDE3642401E4400000CF60 /* LaunchScreen.storyboard in Resources */,
+				0ACDE3612401E4400000CF60 /* Preview Assets.xcassets in Resources */,
+				0ACDE35E2401E4400000CF60 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3682401E4410000CF60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3732401E4410000CF60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136331BA0FF704B5BFCAC079 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp-SmartBellAppUITests/Pods-SmartBellApp-SmartBellAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp-SmartBellAppUITests/Pods-SmartBellApp-SmartBellAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp-SmartBellAppUITests/Pods-SmartBellApp-SmartBellAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		653771988796B81192FE939A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartBellApp-SmartBellAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C35017F5ED872434C909FF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp/Pods-SmartBellApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp/Pods-SmartBellApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartBellApp/Pods-SmartBellApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A56EBADC0D415E266C301CF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartBellApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8FA620CA0DA405E88528C5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartBellAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ACDE3502401E43E0000CF60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE21E3E2448B0AC009CA983 /* WorkoutView.swift in Sources */,
+				0AA4635C240DC1AD00652ED5 /* DispatchView.swift in Sources */,
+				0AE21E402448BB7F009CA983 /* ConnectionView.swift in Sources */,
+				0ACDE3582401E43E0000CF60 /* AppDelegate.swift in Sources */,
+				0ACDE35A2401E43E0000CF60 /* SceneDelegate.swift in Sources */,
+				0AE21E3C244896DA009CA983 /* HomeView.swift in Sources */,
+				0A6AFCCF24134631006764E6 /* LoginView.swift in Sources */,
+				0ACDE35C2401E43E0000CF60 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3662401E4410000CF60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACDE36F2401E4410000CF60 /* SmartBellAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACDE3712401E4410000CF60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACDE37A2401E4410000CF60 /* SmartBellAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0ACDE36C2401E4410000CF60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ACDE3532401E43E0000CF60 /* SmartBellApp */;
+			targetProxy = 0ACDE36B2401E4410000CF60 /* PBXContainerItemProxy */;
+		};
+		0ACDE3772401E4410000CF60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ACDE3532401E43E0000CF60 /* SmartBellApp */;
+			targetProxy = 0ACDE3762401E4410000CF60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0ACDE3622401E4400000CF60 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ACDE3632401E4400000CF60 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDE37C2401E4410000CF60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0ACDE37D2401E4410000CF60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0ACDE37F2401E4410000CF60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B130E2C23F38481335886F8A /* Pods-SmartBellApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SmartBellApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y3K76U9PRU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SmartBellApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0ACDE3802401E4410000CF60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 707E04AA8A72675CAC6C83A1 /* Pods-SmartBellApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SmartBellApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y3K76U9PRU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SmartBellApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0ACDE3822401E4410000CF60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD34F765490D3ECA537630A /* Pods-SmartBellAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartBellAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartBellApp.app/SmartBellApp";
+			};
+			name = Debug;
+		};
+		0ACDE3832401E4410000CF60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BE7A7D222CC5B6AFF3E8D1D /* Pods-SmartBellAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartBellAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartBellApp.app/SmartBellApp";
+			};
+			name = Release;
+		};
+		0ACDE3852401E4410000CF60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 857E6E36B0F9FDC39E47D451 /* Pods-SmartBellApp-SmartBellAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartBellAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartBellApp;
+			};
+			name = Debug;
+		};
+		0ACDE3862401E4410000CF60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB58E6A2715EC653DA6F6909 /* Pods-SmartBellApp-SmartBellAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartBellAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SmartBell.SmartBellAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartBellApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ACDE34F2401E43E0000CF60 /* Build configuration list for PBXProject "SmartBellApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACDE37C2401E4410000CF60 /* Debug */,
+				0ACDE37D2401E4410000CF60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ACDE37E2401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACDE37F2401E4410000CF60 /* Debug */,
+				0ACDE3802401E4410000CF60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ACDE3812401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACDE3822401E4410000CF60 /* Debug */,
+				0ACDE3832401E4410000CF60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ACDE3842401E4410000CF60 /* Build configuration list for PBXNativeTarget "SmartBellAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACDE3852401E4410000CF60 /* Debug */,
+				0ACDE3862401E4410000CF60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ACDE34C2401E43E0000CF60 /* Project object */;
+}
